@@ -1,0 +1,117 @@
+/* Sidebar Container */
+.fixedSidebar {
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transition: 0.25s;
+  }
+  
+  /* Left Sidebar */
+  .fixedSidebarLeft {
+    left: 0;
+    width: 75px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .fixedSidebarLeft.active {
+    left: -75px;
+  }
+  
+  /* Sidebar Items */
+  .sidebarItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 5px;
+    text-decoration: none;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    transition: 0.25s;
+  }
+  
+  .sidebarItem:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .sidebarItem:hover .sidebarIcon {
+    color: #0065ee;
+  }
+  
+  .sidebarIcon {
+    width: 24px;
+    height: 24px;
+    color: #333;
+    transition: 0.25s;
+  }
+  
+  /* Toggle Button */
+  .buttonTrigger {
+    left: 51px;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  
+  .buttonTrigger:hover {
+    background-color: #f7f7f7;
+  }
+  
+  .buttonTrigger:hover .toggleIcon {
+    color: #0065ee;
+  }
+  
+  .toggleIcon {
+    width: 20px;
+    height: 20px;
+    color: #333;
+    transition: 0.25s;
+  }
+  
+  .buttonTrigger.active {
+    background-color: #0065ee;
+  }
+  
+  .buttonTrigger.active .toggleIcon {
+    color: #fff;
+  }
+  
+  /* Tooltip */
+  [data-tooltip] {
+    position: relative;
+  }
+  
+  [data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(-50%);
+    padding: 5px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: #fff;
+    background-color: #0065ee;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+  }
+  
+  [data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+  .is-active svg {
+    color: #0065ee !important;
+  }
+
+  

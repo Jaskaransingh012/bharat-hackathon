@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p.mb{
+    margin-bottom: 5px !important;
+  }
+.chat{
+  color: white !important;
+  margin-bottom: 5px;
+
+}

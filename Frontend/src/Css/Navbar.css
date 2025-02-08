@@ -1,0 +1,26 @@
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button span {
+  position: relative;
+  z-index: 10;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+button:hover::before {
+  opacity: 1;
+}

@@ -1,0 +1,31 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.App {
+  text-align: center;
+}
+
+.content {
+  margin-left: 75px; /* Adjust based on sidebar width */
+  padding: 20px;
+}
+
+h1 {
+  color: #0065ee;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+
+/* MarketPlace */
+.sortBtn svg{
+  width: 20px;
+  height: 20px;
+}
