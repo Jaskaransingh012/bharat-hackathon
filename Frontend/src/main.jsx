@@ -25,11 +25,7 @@ import ChatPage from "./pages/chatPage.jsx";
 import PostAd from "./pages/PostAd.jsx";
 import LoginUser from "./pages/LoginPages/LoginUser.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
-<<<<<<< HEAD
 import SignupUser from "./pages/LoginPages/SignUpUser.jsx";
-=======
-import ConsultDoctor from "./Components/Vetrinary/consult.jsx";
->>>>>>> 1813563128de2007ff495e8f28f675de6af4b983
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,11 +47,7 @@ const router = createBrowserRouter(
       <Route path="doctor/video" element={<DocVideo />} />
       <Route path="/login" element={<LoginUser/>} />
       <Route path="signup" element={<Signup />} />
-<<<<<<< HEAD
       <Route path="signup-user" element={<SignupUser/>} />
-=======
-      <Route path="consult" element={<ConsultDoctor />} />
->>>>>>> 1813563128de2007ff495e8f28f675de6af4b983
     </Route>
   )
 );
