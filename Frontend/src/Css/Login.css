@@ -8,6 +8,17 @@
   padding: 20px;
 }
 
+
+/* Merchant Card */
+.merchant-card {
+  border: 2px solid #ff9800; /* Orange border */
+}
+
+.merchant-card:hover {
+  background-color: #fff3e0; /* Light orange background */
+}
+
+
 .login-container {
   background-color: white;
   border-radius: 20px;
@@ -81,7 +92,7 @@ p {
   background-color: #e8f5e9; /* Light green background */
 }
 
-.icon {
+.icon-s {
   width: 80px;
   height: 80px;
   border-radius: 50%;

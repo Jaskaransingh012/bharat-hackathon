@@ -1,0 +1,110 @@
+.merchant-signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5;
+    padding: 2rem;
+  }
+  
+  .merchant-signup-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .signup-title {
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .form-section {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .form-section legend {
+    padding: 0 0.5rem;
+    color: #636e72;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .input-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+    font-weight: 500;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-group input:focus,
+  .input-group textarea:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+  
+  .submit-btn {
+    background: #6c5ce7;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background: #5b4bc4;
+  }
+  
+  .submit-btn:disabled {
+    background: #a8a8a8;
+    cursor: not-allowed;
+  }
+  
+  .title-icon {
+    color: #6c5ce7;
+    font-size: 1.5em;
+  }

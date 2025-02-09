@@ -1,4 +1,5 @@
 const Animal = require('../Models/Animal');
+const User = require('../Models/UserModel');
 
 async function getAllAnimals(req, res) {
     try {
@@ -45,7 +46,7 @@ async function getAnimalById(req, res) {
 
 async function createAnimal(req, res) {
     try {
-        const { title, price, description, category, location, userId } = req.body; // User ID should come from frontend
+        const { title, price, description, category, location, userId, image } = req.body;
 
         console.log("Received User ID:", userId); // Debugging log
 
@@ -53,16 +54,32 @@ async function createAnimal(req, res) {
             return res.status(400).json({ message: "User ID is missing from request" });
         }
 
+        // Create the new Animal document
         const newAnimal = new Animal({
             title,
             price,
             description,
             category,
             location,
-            postedBy: userId, // Ensure the schema has postedBy
+            postedBy: userId,
+            image
         });
 
+        // Save the new Animal document
         const savedAnimal = await newAnimal.save();
+
+        // Find the User document and push the new Animal's _id to the ads array
+        const user = await User.findByIdAndUpdate(
+            userId,
+            { $push: { animals: savedAnimal._id } },
+            { new: true } // Return the updated user document
+        );
+
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Respond with the saved Animal document
         res.status(201).json(savedAnimal);
     } catch (error) {
         console.error("Error creating animal:", error);

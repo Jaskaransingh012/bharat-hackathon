@@ -4,6 +4,8 @@ const cors = require('cors');
 const connectToDB = require('./config/dbConnect');
 const userRoutes = require('./Routes/User.routes');
 const animalRoutes = require('./Routes/Animal.routes');
+const merchantRoutes = require("./Routes/MerchantRoutes");
+
 
 const app = express();
 
@@ -17,6 +19,8 @@ connectToDB();
 // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/animals', animalRoutes);
+app.use("/api/merchants", merchantRoutes);
+
 
 // Start Server
 const PORT = process.env.PORT || 5000;

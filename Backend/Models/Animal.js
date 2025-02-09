@@ -6,7 +6,7 @@ const animalSchema = new mongoose.Schema({
     description: { type: String, required: true },
     category: { type: String, required: true, enum: ["Horse", "Cow", "Goat", "Dog", "Cat"] },
     location: { type: String, required: true },
-    images: [{ type: String }], // Store image URLs
+    image: { type: String }, // Store image URLs
     postedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }, // Reference to the user who posted the ad
     createdAt: { type: Date, default: Date.now },
   });

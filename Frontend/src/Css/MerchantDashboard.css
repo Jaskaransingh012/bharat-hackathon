@@ -1,0 +1,96 @@
+.dashboard-logo {
+    padding: 24px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+  
+  .dashboard-logo h2 {
+    color: white;
+    margin-bottom: 8px;
+  }
+  
+  .dashboard-header {
+    background: white !important;
+    padding: 0 24px !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-content {
+    margin: 24px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .stats-card .ant-statistic-title {
+    color: #6e6b7b;
+    font-weight: 500;
+  }
+  
+  .main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+  
+  .chart-card, .orders-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-card .ant-table-row {
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .orders-card .ant-table-row:hover {
+    background: #f8f8f8;
+  }
+  
+  .status-pending {
+    color: #ff9f43;
+    font-weight: 500;
+  }
+  
+  .status-delivered {
+    color: #28c76f;
+    font-weight: 500;
+  }
+  
+  .status-cancelled {
+    color: #ea5455;
+    font-weight: 500;
+  }
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .header-actions button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .ant-layout-sider {
+    background: #2a3042 !important;
+  }
+  
+  .ant-menu-dark {
+    background: #2a3042 !important;
+  }
+  
+  .ant-menu-item-selected {
+    background-color: #7367f0 !important;
+  }

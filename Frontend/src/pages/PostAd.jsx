@@ -5,7 +5,6 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
 const PostAd = () => {
-
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: "",
@@ -13,7 +12,8 @@ const PostAd = () => {
     description: "",
     category: "Horse",
     location: "",
-    images: [],
+    image: "",
+    userId : ""
   });
 
   const [imagePreviews, setImagePreviews] = useState([]);
@@ -58,7 +58,8 @@ const PostAd = () => {
     e.preventDefault();
     const userString = localStorage.getItem("user"); // Retrieve the JSON string
     const userObject = JSON.parse(userString);
-    const userId = userObject._id;
+    setUserId(userObject._id);
+    // const userId = userObject._id;
     // Retrieve user ID from localStorage
     console.log("Stored User ID:", userId);
 
@@ -82,17 +83,22 @@ const PostAd = () => {
       description: formData.description,
       category: formData.category,
       location: formData.location,
+      image: formData.image,
       userId,
     };
-    console.log(adData)
+    console.log(adData);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/animals/", adData, {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer 67a748f2d486daade166c293`,  // Ensure Bearer token format
-        },
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/animals/",
+        adData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer 67a748f2d486daade166c293`, // Ensure Bearer token format
+          },
+        }
+      );
 
       if (response.status === 201) {
         toast.success("Ad posted successfully!");
@@ -104,18 +110,20 @@ const PostAd = () => {
     }
   };
 
-
-
   // Keep the existing UI exactly as it was
   return (
     <div className="min-h-screen pt-5 flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-200 px-4">
       <div className="bg-white shadow-2xl rounded-3xl p-8 w-full max-w-5xl">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">📢 Post Your Animal Ad</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">
+          📢 Post Your Animal Ad
+        </h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Title */}
           <div>
-            <label className="block text-lg font-medium text-gray-700">Ad Title</label>
+            <label className="block text-lg font-medium text-gray-700">
+              Ad Title
+            </label>
             <input
               type="text"
               name="title"
@@ -130,7 +138,9 @@ const PostAd = () => {
           {/* Price & Category */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-lg font-medium text-gray-700">Price ($)</label>
+              <label className="block text-lg font-medium text-gray-700">
+                Price ($)
+              </label>
               <input
                 type="number"
                 name="price"
@@ -143,7 +153,9 @@ const PostAd = () => {
             </div>
 
             <div>
-              <label className="block text-lg font-medium text-gray-700">Category</label>
+              <label className="block text-lg font-medium text-gray-700">
+                Category
+              </label>
               <select
                 name="category"
                 value={formData.category}
@@ -161,7 +173,9 @@ const PostAd = () => {
 
           {/* Location */}
           <div>
-            <label className="block text-lg font-medium text-gray-700">Location</label>
+            <label className="block text-lg font-medium text-gray-700">
+              Location
+            </label>
             <input
               type="text"
               name="location"
@@ -175,7 +189,9 @@ const PostAd = () => {
 
           {/* Description */}
           <div>
-            <label className="block text-lg font-medium text-gray-700">Description</label>
+            <label className="block text-lg font-medium text-gray-700">
+              Description
+            </label>
             <textarea
               name="description"
               value={formData.description}
@@ -189,15 +205,18 @@ const PostAd = () => {
 
           {/* Image Upload */}
           <div>
-            <label className="block text-lg font-medium text-gray-700">Upload Images</label>
+            <label className="block text-lg font-medium text-gray-700">
+              Upload Image Url
+            </label>
             <input
-              type="file"
-              multiple
-              accept="image/*"
+              type="text"
+              name="image"
+              value={formData.image}
+              onChange={handleInputChange}
               className="mt-1 w-full p-3 border rounded-xl shadow-sm focus:ring-2 focus:ring-blue-400 focus:outline-none"
             />
             {/* Image Previews */}
-            {imagePreviews.length > 0 && (
+            {/* {imagePreviews.length > 0 && (
               <div className="mt-4 flex gap-2">
                 {imagePreviews.map((src, index) => (
                   <img
@@ -208,7 +227,7 @@ const PostAd = () => {
                   />
                 ))}
               </div>
-            )}
+            )} */}
           </div>
 
           {/* Submit Button */}

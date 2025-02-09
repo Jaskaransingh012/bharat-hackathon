@@ -111,11 +111,7 @@ const Navbar = () => {
             className="relative px-6 py-2 text-white font-semibold bg-gradient-to-r from-red-500 to-red-700 rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
             onClick={handleLogout} // Handle logout
           >
-<<<<<<< HEAD
             Logout
-=======
-            SignUp
->>>>>>> 1813563128de2007ff495e8f28f675de6af4b983
           </button>
         )}
 

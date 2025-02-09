@@ -26,6 +26,7 @@ import PostAd from "./pages/PostAd.jsx";
 import LoginUser from "./pages/LoginPages/LoginUser.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import SignupUser from "./pages/LoginPages/SignUpUser.jsx";
+import MerchantSignup from "./pages/LoginPages/MerchantSignup.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,6 +49,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginUser/>} />
       <Route path="signup" element={<Signup />} />
       <Route path="signup-user" element={<SignupUser/>} />
+      <Route path="signup-merchant" element={<MerchantSignup/>} />
     </Route>
   )
 );
